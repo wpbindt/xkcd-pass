@@ -34,11 +34,31 @@ def load_dict() -> list[str]:
 
 if __name__ == '__main__':
     parser = ArgumentParser()
-    parser.add_argument('words', type=int)
-    parser.add_argument('--no-spaces', action='store_true')
-    parser.add_argument('--special', action='store_true')
-    parser.add_argument('--number', action='store_true')
-    parser.add_argument('--capital', action='store_true')
+    parser.add_argument(
+        'words', 
+        type=int, 
+        help='number of words to use',
+    )
+    parser.add_argument(
+        '--no-spaces', 
+        action='store_true', 
+        help='remove spaces',
+    )
+    parser.add_argument(
+        '--special', 
+        action='store_true', 
+        help='insert special character at random location',
+    )
+    parser.add_argument(
+        '--number', 
+        action='store_true',
+        help='insert digit at random location',
+    )
+    parser.add_argument(
+        '--capital', 
+        action='store_true',
+        help='insert capital letter at random location',
+    )
     args = parser.parse_args()
 
     charsets = []
