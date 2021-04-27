@@ -17,7 +17,7 @@ def generate(
     return password
 
 
-def insert_char(password: str, chars: list[str]):
+def insert_char(password: str, chars: list[str]) -> str:
     insert_at = secrets.randbelow(len(password))
     char = secrets.choice(chars)
     return password[:insert_at] + char + password[insert_at:]
@@ -63,11 +63,11 @@ if __name__ == '__main__':
 
     charsets = []
     if args.special:
-        charsets.append(list(punctuation))
+        charsets.append(punctuation)
     if args.capital:
-        charsets.append(list(ascii_uppercase))
+        charsets.append(ascii_uppercase)
     if args.number:
-        charsets.append(list(digits))
+        charsets.append(digits)
 
     print(generate(
         args.words, 
